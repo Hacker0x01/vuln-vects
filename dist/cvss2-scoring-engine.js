@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cvss2ScoringEngine = void 0;
 var cvss_score_1 = require("./cvss-score");
 var score_validation_error_1 = require("./score-validation-error");
 var cvss2_enums_1 = require("./cvss2-enums");
@@ -46,7 +47,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (accessVector) {
             this._accessVector = accessVector;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "accessComplexity", {
@@ -59,7 +60,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (accessComplexity) {
             this._accessComplexity = accessComplexity;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "authentication", {
@@ -72,7 +73,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (authentication) {
             this._authentication = authentication;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "confidentialityImpact", {
@@ -85,7 +86,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (confidentialityImpact) {
             this._confidentialityImpact = confidentialityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "integrityImpact", {
@@ -98,7 +99,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (integrityImpact) {
             this._integrityImpact = integrityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "availabilityImpact", {
@@ -111,7 +112,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (availabilityImpact) {
             this._availabilityImpact = availabilityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "exploitability", {
@@ -124,7 +125,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (exploitability) {
             this._exploitability = exploitability;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "remediationLevel", {
@@ -137,7 +138,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (remediationLevel) {
             this._remediationLevel = remediationLevel;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "reportConfidence", {
@@ -150,7 +151,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (reportConfidence) {
             this._reportConfidence = reportConfidence;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "collateralDamagePotential", {
@@ -163,7 +164,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (collateralDamagePotential) {
             this._collateralDamagePotential = collateralDamagePotential;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "targetDistribution", {
@@ -176,7 +177,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (targetDistribution) {
             this._targetDistribution = targetDistribution;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "confidentialityRequirement", {
@@ -189,7 +190,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (confidentialityRequirement) {
             this._confidentialityRequirement = confidentialityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "integrityRequirement", {
@@ -202,7 +203,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (integrityRequirement) {
             this._integrityRequirement = integrityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss2ScoringEngine.prototype, "availabilityRequirement", {
@@ -215,7 +216,7 @@ var Cvss2ScoringEngine = /** @class */ (function () {
         set: function (availabilityRequirement) {
             this._availabilityRequirement = availabilityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cvss3ScoringEngine = void 0;
 var cvss_scoring_1 = require("./cvss-scoring");
 var cvss_score_1 = require("./cvss-score");
 var score_validation_error_1 = require("./score-validation-error");
@@ -55,7 +56,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (attackVector) {
             this._attackVector = attackVector;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "attackComplexity", {
@@ -68,7 +69,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (attackComplexity) {
             this._attackComplexity = attackComplexity;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "privilegesRequired", {
@@ -81,7 +82,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (privilegesRequired) {
             this._privilegesRequired = privilegesRequired;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "userInteraction", {
@@ -94,7 +95,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (userInteraction) {
             this._userInteraction = userInteraction;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "scope", {
@@ -107,7 +108,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (scope) {
             this._scope = scope;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "confidentialityImpact", {
@@ -120,7 +121,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (confidentialityImpact) {
             this._confidentialityImpact = confidentialityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "integrityImpact", {
@@ -133,7 +134,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (integrityImpact) {
             this._integrityImpact = integrityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "availabilityImpact", {
@@ -146,7 +147,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (availabilityImpact) {
             this._availabilityImpact = availabilityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "exploitCodeMaturity", {
@@ -159,7 +160,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (exploitCodeMaturity) {
             this._exploitCodeMaturity = exploitCodeMaturity;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "remediationLevel", {
@@ -172,7 +173,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (remediationLevel) {
             this._remediationLevel = remediationLevel;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "reportConfidence", {
@@ -185,7 +186,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (reportConfidence) {
             this._reportConfidence = reportConfidence;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedAttackVector", {
@@ -198,7 +199,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedAttackVector) {
             this._modifiedAttackVector = modifiedAttackVector;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedAttackComplexity", {
@@ -211,7 +212,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedAttackComplexity) {
             this._modifiedAttackComplexity = modifiedAttackComplexity;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedPrivilegesRequired", {
@@ -224,7 +225,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedPrivilegesRequired) {
             this._modifiedPrivilegesRequired = modifiedPrivilegesRequired;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedUserInteraction", {
@@ -237,7 +238,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedUserInteraction) {
             this._modifiedUserInteraction = modifiedUserInteraction;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedScope", {
@@ -250,7 +251,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedScope) {
             this._modifiedScope = modifiedScope;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedConfidentialityImpact", {
@@ -263,7 +264,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedConfidentialityImpact) {
             this._modifiedConfidentialityImpact = modifiedConfidentialityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedIntegrityImpact", {
@@ -276,7 +277,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedIntegrityImpact) {
             this._modifiedIntegrityImpact = modifiedIntegrityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "modifiedAvailabilityImpact", {
@@ -289,7 +290,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (modifiedAvailabilityImpact) {
             this._modifiedAvailabilityImpact = modifiedAvailabilityImpact;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "confidentialityRequirement", {
@@ -302,7 +303,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (confidentialityRequirement) {
             this._confidentialityRequirement = confidentialityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "integrityRequirement", {
@@ -315,7 +316,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (integrityRequirement) {
             this._integrityRequirement = integrityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(Cvss3ScoringEngine.prototype, "availabilityRequirement", {
@@ -328,7 +329,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         set: function (availabilityRequirement) {
             this._availabilityRequirement = availabilityRequirement;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**
@@ -489,7 +490,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         if (this._scope === cvss3_enums_1.Scope.UNCHANGED) {
             return 6.42 * baseImpactSubscore;
         }
-        return 7.52 * (baseImpactSubscore - 0.029) - 3.25 * Math.pow(baseImpactSubscore - 0.02, 15);
+        return 7.52 * (baseImpactSubscore - 0.029) - 3.25 * Math.pow(baseImpactSubscore - 0.02, 13);
     };
     /**
      * Converts an {@link AttackVector} enum value to a number for use in calculations.
@@ -582,7 +583,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
             return 0;
         }
         var modifier = this._scope === cvss3_enums_1.Scope.UNCHANGED ? 1 : 1.08;
-        return cvss_scoring_1.roundUp(Math.min(modifier * (impactSubscore + exploitability), 10));
+        return (0, cvss_scoring_1.roundUp)(Math.min(modifier * (impactSubscore + exploitability), 10));
     };
     /**
      * Converts an {@link ExploitCodeMaturity} enum value to a number for use in calculations.
@@ -649,7 +650,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         var remediationLevel = Cvss3ScoringEngine.renderRemediationLevel(this._remediationLevel);
         var reportConfidence = Cvss3ScoringEngine.renderReportConfidence(this._reportConfidence);
         // Compute and return temporal score.
-        var temporalScore = cvss_scoring_1.roundUp(baseScore * exploitCodeMaturity * remediationLevel * reportConfidence);
+        var temporalScore = (0, cvss_scoring_1.roundUp)(baseScore * exploitCodeMaturity * remediationLevel * reportConfidence);
         return temporalScore;
     };
     /**
@@ -700,7 +701,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
         if (this._modifiedScope === cvss3_enums_1.Scope.UNCHANGED) {
             return 6.42 * iscModified;
         }
-        return 7.52 * (iscModified - 0.029) - 3.25 * Math.pow(iscModified - 0.02, 15);
+        return 7.52 * (iscModified - 0.029) - 3.25 * Math.pow(iscModified - 0.02, 13);
     };
     /**
      * Computes the modified exploitability subscore.
@@ -733,7 +734,7 @@ var Cvss3ScoringEngine = /** @class */ (function () {
             return 0;
         }
         var modifier = modifiedScope === cvss3_enums_1.Scope.UNCHANGED ? 1 : 1.08;
-        return cvss_scoring_1.roundUp(cvss_scoring_1.roundUp(Math.min(modifier
+        return (0, cvss_scoring_1.roundUp)((0, cvss_scoring_1.roundUp)(Math.min(modifier
             * (modifiedImpactSubscore + modifiedExploitabilitySubscore), 10))
             * exploitCodeMaturity
             * remediationLevel

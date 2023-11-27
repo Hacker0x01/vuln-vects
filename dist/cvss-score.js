@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CvssScore = void 0;
 /**
  * Represents a CVSS score produced by an instance of {@link CvssScoringEngine}.
  *
@@ -46,7 +47,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._baseScore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "impactSubscore", {
@@ -60,7 +61,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._impactSubscore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "exploitabilitySubscore", {
@@ -74,7 +75,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._exploitabilitySubscore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "temporalScore", {
@@ -89,7 +90,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._temporalScore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "environmentalScore", {
@@ -104,7 +105,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._environmentalScore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "modifiedImpactSubscore", {
@@ -118,7 +119,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._modifiedImpactSubscore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "overallScore", {
@@ -133,7 +134,7 @@ var CvssScore = /** @class */ (function () {
         get: function () {
             return this._overallScore;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(CvssScore.prototype, "cvss3OverallSeverityText", {
@@ -157,7 +158,7 @@ var CvssScore = /** @class */ (function () {
             }
             return "none";
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return CvssScore;

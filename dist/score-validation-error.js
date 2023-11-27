@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScoreValidationError = void 0;
 /**
  * Represents a CVSS score validation error.
  *
@@ -21,7 +22,7 @@ var ScoreValidationError = /** @class */ (function () {
         get: function () {
             return this._message;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return ScoreValidationError;

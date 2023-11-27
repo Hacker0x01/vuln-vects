@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cvss3VectorRenderer = exports.Cvss3VectorPrefixOption = void 0;
 var cvss3_enums_1 = require("./cvss3-enums");
 /**
  * Represents a prefixing option for CVSS v3.x vectors.
@@ -47,7 +48,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
         set: function (prefixOption) {
             this._prefixOption = prefixOption;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     /**
@@ -67,8 +68,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.AttackVector.PHYSICAL:
                 return 'P';
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected attack vector value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts an attack complexity enum value into its string representation.
@@ -83,8 +83,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.AttackComplexity.LOW:
                 return 'L';
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected access complexity value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts a privileges required enum value into its string representation.
@@ -103,8 +102,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.PrivilegesRequired.NONE:
                 return 'N';
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected privileges required value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts a user interaction enum value into its string representation.
@@ -119,8 +117,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.UserInteraction.NONE:
                 return 'N';
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected user interaction value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts a scope enum value into its string representation.
@@ -135,8 +132,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.Scope.UNCHANGED:
                 return "U";
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected user interaction value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts an impact enum value into its string representation.
@@ -153,8 +149,7 @@ var Cvss3VectorRenderer = /** @class */ (function () {
             case cvss3_enums_1.Impact.HIGH:
                 return "H";
         }
-        // Should never happen thanks to validation before call.
-        throw new RangeError('Encountered unexpected user interaction value during vector rendering.');
+        return 'X';
     };
     /**
      * Converts a exploit code maturity enum value into its string representation.
@@ -261,19 +256,41 @@ var Cvss3VectorRenderer = /** @class */ (function () {
         }
         // If present, include environmental metrics.
         if (scoringEngine.isEnvironmentalScoreDefined()) {
-            vector.push('MAV:' + Cvss3VectorRenderer.renderAttackVector(scoringEngine.modifiedAttackVector));
-            vector.push('MAC:' + Cvss3VectorRenderer.renderAttackComplexity(scoringEngine.modifiedAttackComplexity));
-            vector.push('MPR:'
-                + Cvss3VectorRenderer.renderPrivilegesRequired(scoringEngine.modifiedPrivilegesRequired));
-            vector.push('MUI:' + Cvss3VectorRenderer.renderUserInteraction(scoringEngine.modifiedUserInteraction));
-            vector.push('MS:' + Cvss3VectorRenderer.renderScope(scoringEngine.modifiedScope));
-            vector.push('MC:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedConfidentialityImpact));
-            vector.push('MI:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedIntegrityImpact));
-            vector.push('MA:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedAvailabilityImpact));
-            vector.push('CR:'
-                + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.confidentialityRequirement));
-            vector.push('IR:' + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.integrityRequirement));
-            vector.push('AR:' + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.availabilityRequirement));
+            if (scoringEngine.confidentialityRequirement !== 0) {
+                vector.push('CR:'
+                    + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.confidentialityRequirement));
+            }
+            if (scoringEngine.integrityRequirement !== 0) {
+                vector.push('IR:' + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.integrityRequirement));
+            }
+            if (scoringEngine.availabilityRequirement !== 0) {
+                vector.push('AR:' + Cvss3VectorRenderer.renderSecurityRequirement(scoringEngine.availabilityRequirement));
+            }
+            if (scoringEngine.modifiedAttackVector !== 0) {
+                vector.push('MAV:' + Cvss3VectorRenderer.renderAttackVector(scoringEngine.modifiedAttackVector));
+            }
+            if (scoringEngine.modifiedAttackComplexity !== 0) {
+                vector.push('MAC:' + Cvss3VectorRenderer.renderAttackComplexity(scoringEngine.modifiedAttackComplexity));
+            }
+            if (scoringEngine.modifiedPrivilegesRequired !== 0) {
+                vector.push('MPR:'
+                    + Cvss3VectorRenderer.renderPrivilegesRequired(scoringEngine.modifiedPrivilegesRequired));
+            }
+            if (scoringEngine.modifiedUserInteraction !== 0) {
+                vector.push('MUI:' + Cvss3VectorRenderer.renderUserInteraction(scoringEngine.modifiedUserInteraction));
+            }
+            if (scoringEngine.modifiedScope !== 0) {
+                vector.push('MS:' + Cvss3VectorRenderer.renderScope(scoringEngine.modifiedScope));
+            }
+            if (scoringEngine.modifiedConfidentialityImpact !== 0) {
+                vector.push('MC:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedConfidentialityImpact));
+            }
+            if (scoringEngine.modifiedIntegrityImpact !== 0) {
+                vector.push('MI:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedIntegrityImpact));
+            }
+            if (scoringEngine.modifiedAvailabilityImpact !== 0) {
+                vector.push('MA:' + Cvss3VectorRenderer.renderImpact(scoringEngine.modifiedAvailabilityImpact));
+            }
         }
         // Join vector together with forward slashes.
         var vectorString = vector.join('/');
