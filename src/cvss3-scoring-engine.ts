@@ -511,7 +511,7 @@ export class Cvss3ScoringEngine implements CvssScoringEngine {
         if (this._scope === Scope.UNCHANGED) {
             return 6.42 * baseImpactSubscore;
         }
-        return 7.52 * (baseImpactSubscore - 0.029) - 3.25 * Math.pow(baseImpactSubscore - 0.02, 15);
+        return 7.52 * (baseImpactSubscore - 0.029) - 3.25 * Math.pow(baseImpactSubscore - 0.02, 13);
     }
 
     /**
@@ -747,7 +747,7 @@ export class Cvss3ScoringEngine implements CvssScoringEngine {
         if (this._modifiedScope === Scope.UNCHANGED) {
             return 6.42 * iscModified;
         }
-        return 7.52 * (iscModified - 0.029) - 3.25 * Math.pow(iscModified - 0.02, 15);
+        return 7.52 * (iscModified - 0.029) - 3.25 * Math.pow(iscModified - 0.02, 13);
     }
 
     /**

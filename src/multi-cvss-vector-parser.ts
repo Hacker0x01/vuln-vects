@@ -34,7 +34,7 @@ export class MultiCvssVectorParser implements CvssVectorParser {
             try {
                 let score = parser.parse(vector);
                 return score; // Parse successful, return score.
-            } catch (e) {
+            } catch (e: any) {
                 error = e; // Parse unsuccessful, remember error.
             }
         }

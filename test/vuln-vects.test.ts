@@ -49,10 +49,12 @@ const cvss3SmokeTestVectors: Record<string, string> = {
     'CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N': '3.3', // CVE-2021-21587
     'CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N': '3.3',
     'AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N': '3.3',
-    'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H': '7.5', // CVE-2021-29725
     'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H': '7.5',
     'AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H': '7.5',
-    'AV:A/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:H/E:P/RL:T/RC:C/MAV:N/MAC:H/MPR:X/MUI:R/MS:U/MC:L/MI:N/MA:N/CR:H/IR:L/AR:L': '3.2'
+    'AV:A/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:H/E:P/RL:T/RC:C/CR:H/IR:L/AR:L/MAV:N/MAC:H/MUI:R/MS:U/MC:L/MI:N/MA:N': '3.2',
+    'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H': '7.5', // CVE-2021-29725
+    'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N': '9.1',
+    'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/CR:H/IR:H/AR:L': '9.8',
 }
 
 
@@ -126,6 +128,7 @@ describe("The CVSS vector parsing and rendering functionality", () => {
         const renderer = new Cvss3VectorRenderer(Cvss3VectorPrefixOption.NONE);
         for (const vector in cvss3SmokeTestVectors) {
             const parsed = parser.generateScoringEngine(vector);
+
             const rendered = renderer.render(parsed);
             expect(vector, `Parsing and rendering were not involutive for vector '${vector}' (got '${rendered}').`)
                 .to.contain(renderer.render(parsed));
